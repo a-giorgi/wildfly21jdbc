@@ -43,10 +43,8 @@ RUN echo "=> Starting WildFly server" && \
         --max-pool-size=25 \
         --blocking-timeout-wait-millis=5000 \
         --enabled=true" && \
-    echo "=> Shutting down WildFly and Cleaning up" && \
-      $JBOSS_CLI --connect --command=":shutdown" && \
-      rm -rf $JBOSS_HOME/standalone/configuration/standalone_xml_history/ $JBOSS_HOME/standalone/log/* && \
-      rm -f /tmp/*.jar
+    echo "=> Shutting down WildFly" && \
+      $JBOSS_CLI --connect --command=":shutdown" 
 
 # Expose http, admin ad debug ports
 EXPOSE 8080 9990 5005
