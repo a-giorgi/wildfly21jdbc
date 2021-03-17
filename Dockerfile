@@ -46,10 +46,10 @@ RUN echo "=> Starting WildFly server" && \
     echo "=> Shutting down WildFly" && \
       $JBOSS_CLI --connect --command=":shutdown" 
 
-# Expose http, admin ad debug ports
-EXPOSE 8080 9990 5005
+# Expose http and admin 
+EXPOSE 8080 9990
 
 #echo "=> Restarting WildFly"
 # Set the default command to run on boot
 # This will boot WildFly in the standalone mode and bind to all interfaces
-CMD ["/opt/jboss/wildfly/bin/standalone.sh", "-b", "0.0.0.0", "-bmanagement", "0.0.0.0", "--debug", "*:5005"]
+CMD ["/opt/jboss/wildfly/bin/standalone.sh", "-b", "0.0.0.0", "-bmanagement", "0.0.0.0"]
