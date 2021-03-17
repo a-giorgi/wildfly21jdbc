@@ -1,5 +1,5 @@
 # WildFly 21 
-FROM jboss/wildfly:21.0.0.Final
+FROM jboss/wildfly:latest
 
 # Wildfly Console params
 ENV WILDFLY_USER admin
@@ -11,7 +11,7 @@ ENV DB_USER andrea
 ENV DB_PASS password
 ENV DB_URI db:3306
 
-ENV MYSQL_VERSION 8.0.22
+ENV MYSQL_VERSION 5.7
 ENV JBOSS_CLI /opt/jboss/wildfly/bin/jboss-cli.sh
 ENV DEPLOYMENT_DIR /opt/jboss/wildfly/standalone/deployments/
 #ENV JAVA_OPTS
